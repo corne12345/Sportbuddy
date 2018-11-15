@@ -34,20 +34,20 @@ worden uit een andere SQLite database. Deze opties zijn niet allemaal noodzakeli
 zo compleet mogelijk te doen.
 Aangezien ik ook dataprocessing volg, zou ik het leuk vinden om in ieder geval dat aspect te kunnen verwerken
 en qua datapresenting er echt uit te springen (eventueel met een interactief figuur).
-![Alt Text] (https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy4.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy4.PNG)
 
 4. Je eigen profielpagina met daarop gegeens. Dit wil ik echter groter maken met daaronder een overzichtshistorie.
 Hierop kan bijvoorbeeld hardloopsessies gelogd worden of voeding bijgehouden worden en het aantal activiteiten
 per week.
-![Alt Text] (https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy11.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy11.PNG)
 
 5. Een map waarop de andere gebruikers zichtbaar zijn op hun locatie. Deze gebruikers moeten zichtbaar
 zijn en klikbaar, waarna je op hun profielpagina terecht komt en hun sporten kan bekijken. Eventueel
 kun je ze ook als vriend toevoegen.
-![Alt Text] (https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy12.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy12.PNG)
 
 Het profielscherm van vrienden zal erg lijken op het eigen profielscherm, maar zal minder info bevatten.
-![Alt Text] https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy8.PNG
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy8.PNG)
 
 ### Vereisten
 Voor deze app zijn in principe geen externe data nodig. Eventueel zou er voor de voeding in het profiel
