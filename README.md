@@ -34,6 +34,7 @@ worden uit een andere SQLite database. Deze opties zijn niet allemaal noodzakeli
 zo compleet mogelijk te doen.
 Aangezien ik ook dataprocessing volg, zou ik het leuk vinden om in ieder geval dat aspect te kunnen verwerken
 en qua datapresenting er echt uit te springen (eventueel met een interactief figuur).
+
 ![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy4.PNG)
 
 4. Je eigen profielpagina met daarop gegeens. Dit wil ik echter groter maken met daaronder een overzichtshistorie.
