@@ -5,7 +5,7 @@
 Een vriendin van mij studeert communicatie en media design aan de HU. Voor haar studie moest zij een app
 ontwerpen in Marvel (puur design, niets programmeren). Nadat ze eind september de app liet zien, raakte
 ik geïnspireerd om ooit aan het einde van de minor deze app daadwerkelijk te ontwikkelen. Daarom wil ik 
-graag als eindproject de app SportBuddy maken.
+graag als eindproject een variatie op haar app SportBuddy maken, HealthBuddy.
 
 https://marvelapp.com/519eeb3/screen/49316209 
 
@@ -13,10 +13,20 @@ https://marvelapp.com/519eeb3/screen/49316209
 Tussen het drukke leven door zoeken we allemaal een gaatje om nog fijn te kunnen sporten. En natuurlijk doet
 iedereen dat het liefste met iemand samen, maar dat lukt niet altijd goed met vrienden. Om daarom alsnog een
 stok achter de deur te vinden en medestanders te vinden is daarom de app SportBuddy bedacht. Hiermee kun je
-mensen in de omgeving vinden die ook willen sporten en ze uitnodigen om samen te sporten. 
+mensen in de omgeving vinden die ook willen sporten en ze uitnodigen om samen te sporten.
+Een gezond leven begint natuurlijk niet bij sporten, maar bij goede voeding. Een extra aspect daarom is
+een functie die het mogelijk maakt ingenomen voeding te registreren en bij te houden. Dit volgt echter op de eerste
+functie van het vinden van vrienden.
 
 ### Oplossing
 SportBuddy is daarom dé oplossing om sport en gezelligheid te commbineren en beiden te maximaliseren.
+Om een werkende app te krijgen is het volgende noodzakelijk:
+* Een scherm om in te loggen en/of te registreren met achterliggende SQLite-database
+* Een kaart om andere gebruikers op te vinden
+* Een chatfunctie
+* Een pagina om de voedingswaarden van eten te kunnen vinden (Nutritionix) en dit op te slaan in een SQLite-database.
+* Een SQLite-database om de opgeslagen activiteiten in op te slaan; ook calorieverbruik is hiervoor noodzakelijk.
+
 De hier toegevoegde screenshots zijn door deze vriendin ontworpen, maar wil ik wel in een eigen jasje
 gieten en op mijn manier implementeren.
 
@@ -37,7 +47,7 @@ en qua datapresenting er echt uit te springen (eventueel met een interactief fig
 
 ![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy4.PNG)
 
-4. Je eigen profielpagina met daarop gegeens. Dit wil ik echter groter maken met daaronder een overzichtshistorie.
+4. Je eigen profielpagina met daarop gegevens. Dit wil ik echter groter maken met daaronder een overzichtshistorie.
 Hierop kan bijvoorbeeld hardloopsessies gelogd worden of voeding bijgehouden worden en het aantal activiteiten
 per week.
 ![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy11.PNG)
