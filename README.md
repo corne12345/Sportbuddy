@@ -28,12 +28,17 @@ Nutritionix is in staat een groot scala aan input van voeding te herkennen en de
 
 Indien er een database of historie van cheatfoods emaakt wordt is het nodig deze op te slaan in een SQLite database.
 
-De grootste uitdaging van de app zit in het omzetten van de zoekactie van de gebruiker in een calorietotaal, met name wanneer de invoeropdrachten gecompliceerder worden of er een autocomplete/autocorrect noodzakelijk is.
+De grootste uitdaging van de app zit in het omzetten van de zoekactie van de gebruiker in een calorietotaal, met name wanneer de invoeropdrachten gecompliceerder worden of er een autocomplete/autocorrect noodzakelijk is. 
 
-
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
 # Oude Versie
 
 
