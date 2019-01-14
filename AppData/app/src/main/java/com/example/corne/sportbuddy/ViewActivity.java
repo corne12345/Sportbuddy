@@ -40,6 +40,7 @@ public class ViewActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent3 = new Intent (ViewActivity.this, SportActivity.class);
                 intent3.putExtra("calories", calories);
+                startActivity(intent3);
             }
         });
     }
