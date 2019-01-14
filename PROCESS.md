@@ -20,4 +20,6 @@ Verder gegaan met het maken van de alfa versie.
 
 # day 8 (JAN 14 2019)
 Een compleet werkende alfaversie gemaakt. Tijdens het mentorgesprek kwam verder naar voren dat het leuk zou zijn om niet alleen op afstand te focussen in de app (en dus Google Maps te gebruiken), maar ook de duur van de activiteiten te monitoren door een timer te implementeren in het laatste scherm. Dit zal ik ook uit gaan zoeken.
+Daarnaast de knoop doorgehakt om alleen de belangrijkste nutriënten uit de API te halen ivm relevantie.
 Voor morgen ligt de nadruk met name op om de API-calls ook in de app te krijgen, zodat met daadwerkelijke data gewerkt kan worden.
+
