@@ -120,3 +120,5 @@ dat de koppeling tussen een database, een visualisatiekit en AppStudio lastig is
 daarvoor nog handvatten ontstaan tijdens de course.
 Een andere uitdaging lijkt me de vele schermen en buttons die allemaal goed met elkaar moeten linken. 
 Ik zal dit langzaam moeten opbouwen en goed de voortgang moeten bewaken.
+
+Govert 0681239389
