@@ -6,7 +6,7 @@ Deze style guide kan onderverdeeld worden in stijl met betrekking tot de code en
 Hiervoor zijn aparte uitgangspunten die beide behandeld worden.
 
 ## Code
-Er zijn in de industrie twee belangrijke bronnen voor 
+Er zijn in de industrie twee belangrijke bronnen voor de style Guid (Google en Oracle)
 
 ## User Interface
 Design voor de User Interface wordt beschreven op de website van [Android](https://developer.android.com/design/). Hierop zijn diverse links te vinden naar [materials.io](https://material.io/), ,de huidig geldende standaarden met betrekking to de User Interface. Dit type design wordt op de website onderverdeeld in een zestal componenten:
@@ -18,3 +18,16 @@ Design voor de User Interface wordt beschreven op de website van [Android](https
 * [Usability](https://material.io/guidelines/usability/accessibility.html)
 
 Daarnaast staat er nog een soort checklist met de naam [Core app quality](https://developer.android.com/docs/quality-guidelines/core-app-quality). Dit is een soort laatste controle om te kijken of de app voldoet aan de standaarden die vanuit Android gewenst zijn.
+
+## Afspraken
+* Boven iedere comment een witregel
+* Use of proper scope
+* Variable declareren waar het echt nodig is, dus zo laat mogelijk
+* Iedere functie heeft een comment die het doel van de functie beschrijft
+* Alle namen van variabelen zijn in camelCase.
+* DRY code, dus herhalende stukken code incapsuleren in een functie
+* Indentatie is 4 spaties
+* De app is goed werkzaam op ieder formaat telefoon
+* Landscape modus moet op ieder scherm van de app te gebruiken zijn
+* De materials.io standaarden worden zo veel mogelijk als basis genomen voor het ontwerp van de app.
+* De back button moet je altijd terug sturen naar een relevante pagina, dus zo nodig een activity finishen
