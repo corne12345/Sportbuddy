@@ -6,7 +6,7 @@ Deze style guide kan onderverdeeld worden in stijl met betrekking tot de code en
 Hiervoor zijn aparte uitgangspunten die beide behandeld worden.
 
 ## Code
-Er zijn in de industrie twee belangrijke bronnen voor de style Guid ([Google](https://google.github.io/styleguide/javaguide.html) en [Oracle](https://www.oracle.com/technetwork/java/codeconvtoc-136057.html))
+Er zijn in de industrie twee belangrijke bronnen voor de style Guide ([Google](https://google.github.io/styleguide/javaguide.html) en [Oracle](https://www.oracle.com/technetwork/java/codeconvtoc-136057.html)). Een samenvatting en samenvoeging van beide wordt gegeven op een [Github](https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md)-pagina, die als basis voor onze afspraken is genomen.
 
 ## User Interface
 Design voor de User Interface wordt beschreven op de website van [Android](https://developer.android.com/design/). Hierop zijn diverse links te vinden naar [materials.io](https://material.io/), ,de huidig geldende standaarden met betrekking to de User Interface. Dit type design wordt op de website onderverdeeld in een zestal componenten:
