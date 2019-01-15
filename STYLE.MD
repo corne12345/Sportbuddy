@@ -13,3 +13,5 @@ Design voor de User Interface wordt beschreven op de website van [Android](https
 * [Components](https://material.io/guidelines/components/bottom-navigation.html)
 * [Patterns](https://material.io/guidelines/patterns/confirmation-acknowledgement.html)
 * [Usability](https://material.io/guidelines/usability/accessibility.html)
+
+Daarnaast staat er nog een soort checklist met de naam [Core app quality](https://developer.android.com/docs/quality-guidelines/core-app-quality). Dit is een soort laatste controle om te kijken of de app voldoet aan de standaarden die vanuit Android gewenst zijn.
