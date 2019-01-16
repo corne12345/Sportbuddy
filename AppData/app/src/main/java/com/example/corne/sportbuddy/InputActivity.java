@@ -3,8 +3,10 @@ package com.example.corne.sportbuddy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class InputActivity extends AppCompatActivity {
 
@@ -17,7 +19,12 @@ public class InputActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText textView = findViewById(R.id.editText);
+                String input = textView.getText().toString();
+                Log.e("Developer", input);
+
                 Intent intent = new Intent(InputActivity.this, ViewActivity.class);
+                intent.putExtra("Input", input);
                 startActivity(intent);
             }
         });

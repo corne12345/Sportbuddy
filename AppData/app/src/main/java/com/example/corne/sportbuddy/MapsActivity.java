@@ -1,7 +1,13 @@
 package com.example.corne.sportbuddy;
 
+import android.content.Context;
+import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,6 +28,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+        final Button button = findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button.setVisibility(View.INVISIBLE);
+
+                final TextView textField = findViewById(R.id.textView7);
+                textField.setVisibility(View.VISIBLE);
+
+                long time = 30000;
+                final CountDownTimer timer = new CountDownTimer(time, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 + " Remaining");
+                        long millileft = millisUntilFinished;
+                    }
+
+                    public void onFinish() {
+                        textField.setText("done!");
+                        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        v.vibrate(2000);
+
+                    }
+                }.start();
+                    }
+        });
+
+
     }
 
 
@@ -42,5 +77,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
+        }
 }
