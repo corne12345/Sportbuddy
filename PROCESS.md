@@ -23,3 +23,9 @@ Een compleet werkende alfaversie gemaakt. Tijdens het mentorgesprek kwam verder 
 Daarnaast de knoop doorgehakt om alleen de belangrijkste nutriënten uit de API te halen ivm relevantie.
 Voor morgen ligt de nadruk met name op om de API-calls ook in de app te krijgen, zodat met daadwerkelijke data gewerkt kan worden.
 
+# day 9 (JAN 15 2019)
+Begonnen met de Google Maps API werkend te krijgen. Daarnaast ook een timer toegevoegd die aftelt en trilt wanneer de gedane tijd is gelopen. De implementatie van beiden viel me erg tegen en is iets waar ik de rest van het project mee bezig zou kunnen zijn, maar waar niet de focus ligt voor deze app. Voor morgen staat het updaten van de locatie op het programma en eventueel het berekenen van de afstand tussen 2 punten.
+
+# day 10 (JAN 16 2019)
+De eerder gemaakte maps-functionaliteit bleek uiteindelijk niet naar behoren te werken. Hierdoor ben ik opnieuw begonnen deze functionaliteit te implementeren. Deze werkt nu en update iedere 5 seconden de locatie en plaatst hiervan een marker en slaat de coordinaten op. Deze kunnen gebruikt worden om de afstand tussen beide punten te berekenen.
+
