@@ -1,21 +1,21 @@
 package com.example.corne.sportbuddy;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -26,11 +26,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -39,16 +39,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean mLocationPermissionGranted;
     private GoogleMap mMap;
     private Location mLastKnownLocation;
+    private Location mPreviousKnownLocation;
     private static final String TAG = MapsActivity.class.getSimpleName();
     private final LatLng mDefaultLocation = new LatLng(-33.8523341, 151.2106085);
     private static final int DEFAULT_ZOOM = 15;
     private List<LatLng> coordinatesList = new ArrayList<LatLng>();
-
+    private int distance;
+    long time = 30000;
+    CountDownTimer timer = null;
+    long millileft;
     private int counter = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        final TextView textField = findViewById(R.id.textView7);
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -57,50 +63,72 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Construct a FusedLocationProviderClient.
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        // Create timer which can start, pause and resume and warns user when done
         final Button button = findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setVisibility(View.INVISIBLE);
+                if(button.getText().equals("Start Activity")){
+                        button.setText("Pause");
+                        timer = new CountDownTimer(time, 1000) {
+                            public void onTick(long millisUntilFinished) {
+                                textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 +" Left");
+                                millileft = millisUntilFinished;
+                            }
 
-                final TextView textField = findViewById(R.id.textView7);
-                textField.setVisibility(View.VISIBLE);
+                            public void onFinish() {
+                                button.setVisibility(View.INVISIBLE);
+                                textField.setText("done!");
+                                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                v.vibrate(2000);
+                                //Toast.makeText(MapsActivity.this, String.valueOf(distance), Toast.LENGTH_LONG).show();
+                            }
+                        }.start();
 
-                long time = 30000;
-                final CountDownTimer timer = new CountDownTimer(time, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                        textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 +" Left");
-                        long millileft = millisUntilFinished;
-                    }
+                    } else if (button.getText().equals("Pause")){
+                        button.setText("Resume");
+                        timer.cancel();
 
-                    public void onFinish() {
-                        textField.setText("done!");
-                        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                        v.vibrate(2000);
+                    } else if(button.getText().equals("Resume")){
+                        button.setText("Pause");
+                        timer = new CountDownTimer(millileft, 1000) {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                                textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 + " Left");
+                                millileft = millisUntilFinished;
+                            }
 
-                    }
-                }.start();
-                    }
+                            @Override
+                            public void onFinish() {
+                                button.setVisibility(View.INVISIBLE);
+                                textField.setText("done!");
+                                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                v.vibrate(2000);
+                                //Toast.makeText(MapsActivity.this, String.valueOf(distance), Toast.LENGTH_LONG).show();
+                            }
+                        }.start();
+                }
+            }
         });
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
         mMap = map;
+        final Button button = findViewById(R.id.button5);
 
-        // Do other setup activities here too, as described elsewhere in this tutorial.
-
-        // Turn on the My Location layer and the related control on the map.
-        updateLocationUI();
-
-        // Get the current location of the device and set the position of the map.
+        // Create handler to keep updating location
         final Handler handler = new Handler();
         final int delay = 5000; //milliseconds
 
         handler.postDelayed(new Runnable(){
             public void run(){
-                getDeviceLocation();
-                handler.postDelayed(this, delay);
+                    // Turn on the My Location layer and the related control on the map.
+                    updateLocationUI();
+
+                    // Get the current location of the device and set the position of the map.
+                    getDeviceLocation();
+                    handler.postDelayed(this, delay);
             }
         }, delay);
     }
@@ -172,19 +200,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (task.isSuccessful()) {
                             // Set the map's camera position to the current location of the device.
                             counter ++;
-                            mLastKnownLocation = (Location) task.getResult();
+                            if (counter > 1){
+                                mPreviousKnownLocation = mLastKnownLocation;
+                                mLastKnownLocation = (Location) task.getResult();
+                            } else {
+                                mPreviousKnownLocation = (Location) task.getResult();
+                                mLastKnownLocation = mPreviousKnownLocation;
+                            }
+                            distance += mPreviousKnownLocation.distanceTo(mLastKnownLocation);
                             LatLng temp = new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude());
                             coordinatesList.add(temp);
-                            //ToDO: Calculate the distance between two point to get total distance
+                            if (coordinatesList.size() > 1) {
+                                distance += mLastKnownLocation.distanceTo(mPreviousKnownLocation);
+                                mPreviousKnownLocation = mLastKnownLocation;
+                            }
                             //ToDo: Connect all the different markers to get route
                             String printableCoordinates = temp.toString();
                             Log.e("Developers", String.valueOf(coordinatesList.size()));
                             Log.e("Developers", printableCoordinates);
+                            Log.e("Developers", String.valueOf(distance));
 
-                            mMap.addMarker(new MarkerOptions().position(temp).title(String.valueOf(counter)));
-//                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-//                                    new LatLng(mLastKnownLocation.getLatitude(),
-//                                            mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                            mMap.addMarker(new MarkerOptions().position(temp).title(String.valueOf(distance)));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(mLastKnownLocation.getLatitude(),
+                                            mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
                         } else {
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
                             mMap.getUiSettings().setMyLocationButtonEnabled(false);
