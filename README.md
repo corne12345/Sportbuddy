@@ -77,10 +77,10 @@ gieten en op mijn manier implementeren.
 1. Bij het openen van de app een scherm om te registeren
 Deze gegevens moeten opgeslagen worden in een SQLite database die weer geladen kan worden bij het inloggen.
 Het wachtwoord moet encrypt worden.
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy2.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy2.PNG)
 
 2. Na registratie een inlogscherm, dat eenmalig nodig is. Hiervoor moet de database opgeroepen worden
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy3.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy3.PNG)
 
 3. Een homescherm met daarin de opties om te chatten, je profiel inactief/actief te maken, de kaart te
 beijken, je agenda te zien en een sportgeschiedenis met visualisaties. Deze geschiedenis moet opgebouwd
@@ -89,20 +89,20 @@ zo compleet mogelijk te doen.
 Aangezien ik ook dataprocessing volg, zou ik het leuk vinden om in ieder geval dat aspect te kunnen verwerken
 en qua datapresenting er echt uit te springen (eventueel met een interactief figuur).
 
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy4.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy4.PNG)
 
 4. Je eigen profielpagina met daarop gegevens. Dit wil ik echter groter maken met daaronder een overzichtshistorie.
 Hierop kan bijvoorbeeld hardloopsessies gelogd worden of voeding bijgehouden worden en het aantal activiteiten
 per week.
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy11.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy11.PNG)
 
 5. Een map waarop de andere gebruikers zichtbaar zijn op hun locatie. Deze gebruikers moeten zichtbaar
 zijn en klikbaar, waarna je op hun profielpagina terecht komt en hun sporten kan bekijken. Eventueel
 kun je ze ook als vriend toevoegen.
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy12.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy12.PNG)
 
 Het profielscherm van vrienden zal erg lijken op het eigen profielscherm, maar zal minder info bevatten.
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy8.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy8.PNG)
 
 ### Vereisten
 Voor deze app zijn in principe geen externe data nodig. Eventueel zou er voor de voeding in het profiel
