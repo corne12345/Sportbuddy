@@ -77,7 +77,7 @@ gieten en op mijn manier implementeren.
 1. Bij het openen van de app een scherm om te registeren
 Deze gegevens moeten opgeslagen worden in een SQLite database die weer geladen kan worden bij het inloggen.
 Het wachtwoord moet encrypt worden.
-![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy2.PNG)
+![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Oud/Sportbuddy2.PNG)
 
 2. Na registratie een inlogscherm, dat eenmalig nodig is. Hiervoor moet de database opgeroepen worden
 ![Alt Text](https://github.com/corne12345/Sportbuddy/blob/master/doc/Sportbuddy3.PNG)
