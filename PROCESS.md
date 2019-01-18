@@ -29,3 +29,6 @@ Begonnen met de Google Maps API werkend te krijgen. Daarnaast ook een timer toeg
 # day 10 (JAN 16 2019)
 De eerder gemaakte maps-functionaliteit bleek uiteindelijk niet naar behoren te werken. Hierdoor ben ik opnieuw begonnen deze functionaliteit te implementeren. Deze werkt nu en update iedere 5 seconden de locatie en plaatst hiervan een marker en slaat de coordinaten op. De afstand tussen de punten wordt berekend en kan getoond worden, indien de activiteit klaar is.
 
+# day 11 (JAN 17 2019)
+Er was al eerder gecheckt of de API werkt, maar ik kreeg deze nog niet goed geïmplementeerd in Android Studio. Dit werkt nu, al moet er nog wel verder geïmplementeerd worden om te kijken naar de precieze verweving in de app. De API returnt nu log prints
+
