@@ -13,6 +13,12 @@ public class ViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
+
+        Intent gotIntent = getIntent();
+        String food = gotIntent.getSerializableExtra("choice").toString();
+        TextView textView = findViewById(R.id.textView18);
+        textView.setText(food);
+
         TextView caloriesTextView = findViewById(R.id.textView9);
         String caloriesString = (String) caloriesTextView.getText();
         final int calories = Integer.valueOf(caloriesString);

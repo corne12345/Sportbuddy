@@ -37,7 +37,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
         void gotFoodError(String message);
     }
 
-    // Method that makese a queque and tries to add this request to it
+    // Method that makes a queque and tries to add this request to it
     void getFood(Callback activity){
         this.activity = activity;
 //        ToDo: do not hardcode this
@@ -78,8 +78,8 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
             for(int i = 0; i < foodArray.length(); i ++){
                 JSONObject temp = foodArray.getJSONObject(i);
                 foodJSON.add(temp);
-//                String foodString = temp.getString("food_name");
-                String foodString = temp.getString("serving_unit");
+                String foodString = temp.getString("food_name");
+//                String foodString = temp.getString("serving_unit");
                 food.add(foodString);
             }
         } catch (JSONException e) {
