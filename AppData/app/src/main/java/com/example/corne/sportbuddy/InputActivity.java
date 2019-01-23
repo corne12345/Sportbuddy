@@ -18,16 +18,19 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 
 public class InputActivity extends AppCompatActivity implements FoodRequest.Callback {
-    String input = "cake";
+    String input;
+    float totalCalories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
-
-//        FoodRequest x = new FoodRequest(InputActivity.this, input);
-//        x.getFood((FoodRequest.Callback) InputActivity.this);
-
+        Intent gotIntent = getIntent();
+        if (gotIntent.hasExtra("calories")){
+            totalCalories = (float) gotIntent.getSerializableExtra("calories");
+        } else {
+            totalCalories = (float) 0.0;
+        }
         Button button = findViewById(R.id.searchButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,10 +43,8 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
 
                 RadioGroup mRadioGroup = findViewById(R.id.RadioGroup);
                 mRadioGroup.setVisibility(View.VISIBLE);
-
             }
         });
-
         Button button2 = findViewById(R.id.button8);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,7 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
                 String choiceString = (String) choiceButton.getText();
                 Intent intent = new Intent(InputActivity.this, ViewActivity.class);;
                 intent.putExtra("choice", choiceString);
+                intent.putExtra("calories", totalCalories);
                 startActivity(intent);
             }
         });

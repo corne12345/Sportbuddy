@@ -3,6 +3,7 @@ package com.example.corne.sportbuddy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -16,7 +17,8 @@ public class SportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sport);
 
         Intent oldIntent = getIntent();
-        final int calories = (int) oldIntent.getSerializableExtra("calories");
+        final String calories = (String) oldIntent.getSerializableExtra("calories");
+        Log.e("Developer", calories);
 
         Button button = findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener() {

@@ -40,8 +40,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
     // Method that makes a queque and tries to add this request to it
     void getFood(Callback activity){
         this.activity = activity;
-//        ToDo: do not hardcode this
-        String url = "https://trackapi.nutritionix.com/v2/search/instant?query="+ input;
+            String url = "https://trackapi.nutritionix.com/v2/search/instant?query="+ input;
 
         RequestQueue queue = Volley.newRequestQueue(context);
         try {
@@ -50,7 +49,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String, String> params = new HashMap<String, String>();
                     params.put("x-app-id", "a39f9714");
-                    params.put("x-app-key", "8bb9875979d2a2bf0adb3cdc00c6c14f");
+                    params.put("x-app-key", "2332c372fcee1f71ae2e959125eacc97");
                     params.put("x-remote-user-id", "0");
                     params.put("cache-control", "no-cache");
                     params.put("Postman-Token", "96cb6307-0f37-4f7e-a4d1-98ac42d6f23c");
