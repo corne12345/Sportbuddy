@@ -1,6 +1,7 @@
 package com.example.corne.sportbuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int DEFAULT_ZOOM = 15;
     private List<LatLng> coordinatesList = new ArrayList<LatLng>();
     private int distance;
+
     long time = 30000;
     CountDownTimer timer = null;
     long millileft;
@@ -53,6 +55,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        Intent gotIntent = getIntent();
+        float duration = (float) gotIntent.getSerializableExtra("calories");
+        duration = 60000 * duration;
+        time = (long) duration;
+
+
         final TextView textField = findViewById(R.id.textView7);
 
 

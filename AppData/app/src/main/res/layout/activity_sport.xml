@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="serif"
-            android:text="Activiteit kiezen"
+            android:text="Choose Activity"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@android:color/background_dark"
@@ -35,7 +35,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kies een activiteit om de berekening te starten" />
+            android:text="Choose an activity to calculate duration" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Wandelen" />
+                android:text="Walk" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Hardlopen" />
+                android:text="Run" />
 
             <RadioButton
                 android:id="@+id/radioButton6"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Fietsen" />
+                android:text="Cycle" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Zwemmen" />
+                android:text="Swim" />
 
             <RadioButton
                 android:id="@+id/radioButton5"
@@ -82,15 +82,23 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:text="Aerobics" />
+                android:text="Row" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:text="Klimmen" />
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="Do Calisthenics" />
+
+            <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="Wait" />
 
         </RadioGroup>
 

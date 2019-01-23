@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -28,7 +29,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ViewActivity extends AppCompatActivity{
+public class ViewActivity extends AppCompatActivity implements NutrientsRequest.Callback{
 
     String calories;
     String fat;
@@ -38,6 +39,9 @@ public class ViewActivity extends AppCompatActivity{
     String servingSize;
     String servingWeight;
     float totalCalories;
+
+//    Set servings as standard to 1 in case user doesn't give an input
+    int servings = 1;
 
 
     @Override
@@ -52,94 +56,11 @@ public class ViewActivity extends AppCompatActivity{
         TextView textView = findViewById(R.id.textView18);
         textView.setText(food);
 
-        final TextView caloriesView = findViewById(R.id.textView9);
-        final TextView fatView = findViewById(R.id.textView11);
-        final TextView carbohydratesView = findViewById(R.id.textView13);
-        final TextView proteinView = findViewById(R.id.textView15);
-        final TextView sodiumView = findViewById(R.id.textView17);
-        final TextView servingSizeView = findViewById(R.id.textView20);
-        final TextView servingWeightView = findViewById(R.id.textView22);
+        NutrientsRequest x = new NutrientsRequest(this, food);
+        x.getNutrients( ViewActivity.this);
+        Log.e("Developer", "getNutrients done");
 
         final EditText amountServings = findViewById(R.id.editText3);
-
-        try {
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
-            JSONObject jsonBody = new JSONObject();
-            jsonBody.put("query", food);
-            jsonBody.put("timezone", "Central European Time");
-            final String mRequestBody = jsonBody.toString();
-            String URL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
-
-            JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, URL, null, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    try {
-                        JSONArray responseArray = response.getJSONArray("foods");
-                        JSONObject responseObject = (JSONObject) responseArray.get(0);
-                        calories = responseObject.getString("nf_calories");
-                        caloriesView.setText(calories + " KCal");
-                        fat = responseObject.getString("nf_total_fat");
-                        fatView.setText(fat + " g");
-                        carbohydrates = responseObject.getString("nf_total_carbohydrate");
-                        carbohydratesView.setText(carbohydrates + " g");
-                        protein = responseObject.getString("nf_protein");
-                        proteinView.setText(protein + " g");
-                        sodium = responseObject.getString("nf_sodium");
-                        sodiumView.setText(sodium + " mg");
-                        servingSize = responseObject.getString("serving_unit");
-                        servingSizeView.setText(servingSize);
-                        servingWeight = responseObject.getString("serving_weight_grams");
-                        servingWeightView.setText(servingWeight + " g");
-
-                        JSONObject photoArray = responseObject.getJSONObject("photo");
-                        String urlPhoto = photoArray.getString("highres");
-                        Log.e("Developer", urlPhoto);
-                        ImageView photo = findViewById(R.id.imageView2);
-                        Picasso.get().load(urlPhoto).into(photo);
-
-                    } catch (JSONException e){
-                        Log.e("Developer", "Fail");
-                        e.printStackTrace();
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-//                    Log.e("Developer", error.getMessage());
-                    Log.e("Developer", String.valueOf(error));
-                }
-            }) {
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("x-app-id", "a39f9714");
-                    params.put("x-app-key", "2332c372fcee1f71ae2e959125eacc97");
-//                    params.put("Content-Type", "application/json");
-                    params.put("x-remote-user-id", "0");
-                    return params;
-                }
-
-                @Override
-                public String getBodyContentType() {
-                    return "application/json; charset=utf-8";
-                }
-
-                @Override
-                public byte[] getBody() {
-                    try {
-                        return mRequestBody == null ? null : mRequestBody.getBytes("utf-8");
-                    } catch (UnsupportedEncodingException uee) {
-                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", mRequestBody, "utf-8");
-                        return null;
-                    }
-                }
-            };
-
-            requestQueue.add(stringRequest);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,7 +74,9 @@ public class ViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String servingsString = (String) amountServings.getText().toString();
-                int servings = Integer.valueOf(servingsString);
+                if (servingsString.length() > 0){
+                    servings = Integer.valueOf(servingsString);
+                }
                 totalCalories += Float.valueOf(calories) * servings;
                 Log.e("Developer", String.valueOf(totalCalories));
 
@@ -167,7 +90,9 @@ public class ViewActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String servingsString = (String) amountServings.getText().toString();
-                int servings = Integer.valueOf(servingsString);
+                if (servingsString.length() > 0){
+                    servings = Integer.valueOf(servingsString);
+                }
                 totalCalories += Float.valueOf(calories) * servings;
                 Log.e("Developer", String.valueOf(totalCalories));
 
@@ -176,5 +101,47 @@ public class ViewActivity extends AppCompatActivity{
                 startActivity(intent3);
             }
         });
+    }
+
+    @Override
+    public void gotNutrients(final JSONObject responseObject){
+        Log.e("Developer", "Succesfull request");
+        final TextView caloriesView = findViewById(R.id.textView9);
+        final TextView fatView = findViewById(R.id.textView11);
+        final TextView carbohydratesView = findViewById(R.id.textView13);
+        final TextView proteinView = findViewById(R.id.textView15);
+        final TextView sodiumView = findViewById(R.id.textView17);
+        final TextView servingSizeView = findViewById(R.id.textView20);
+        final TextView servingWeightView = findViewById(R.id.textView22);
+
+        try{
+            calories = responseObject.getString("nf_calories");
+            caloriesView.setText(calories + " KCal");
+            fat = responseObject.getString("nf_total_fat");
+            fatView.setText(fat + " g");
+            carbohydrates = responseObject.getString("nf_total_carbohydrate");
+            carbohydratesView.setText(carbohydrates + " g");
+            protein = responseObject.getString("nf_protein");
+            proteinView.setText(protein + " g");
+            sodium = responseObject.getString("nf_sodium");
+            sodiumView.setText(sodium + " mg");
+            servingSize = responseObject.getString("serving_unit");
+            servingSizeView.setText(servingSize);
+            servingWeight = responseObject.getString("serving_weight_grams");
+            servingWeightView.setText(servingWeight + " g");
+
+            JSONObject photoArray = responseObject.getJSONObject("photo");
+            String urlPhoto = photoArray.getString("highres");
+            Log.e("Developer", urlPhoto);
+            ImageView photo = findViewById(R.id.imageView2);
+            Picasso.get().load(urlPhoto).into(photo);
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void gotNutrientsError(String message) {
+        Log.e("Developer", "Failed Request");
     }
 }

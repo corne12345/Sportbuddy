@@ -40,7 +40,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
     // Method that makes a queque and tries to add this request to it
     void getFood(Callback activity){
         this.activity = activity;
-            String url = "https://trackapi.nutritionix.com/v2/search/instant?query="+ input;
+        String url = "https://trackapi.nutritionix.com/v2/search/instant?query="+ input;
 
         RequestQueue queue = Volley.newRequestQueue(context);
         try {

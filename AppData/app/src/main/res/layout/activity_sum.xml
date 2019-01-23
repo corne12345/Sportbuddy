@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif"
-        android:text="Totale Activiteit"
+        android:text="Total Activity"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="24sp"
@@ -30,7 +30,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="Je moet 73 minuten hardlopen om 1000 caloriën te compenseren. Hiervoor ga ik je nu helpen "
+        android:text="You have to ... for ... minutes to compensate. I will help you to achieve this"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />

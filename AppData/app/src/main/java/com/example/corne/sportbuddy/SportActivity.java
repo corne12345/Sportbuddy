@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class SportActivity extends AppCompatActivity {
 
@@ -17,20 +18,44 @@ public class SportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sport);
 
         Intent oldIntent = getIntent();
-        final String calories = (String) oldIntent.getSerializableExtra("calories");
-        Log.e("Developer", calories);
+        final float calories = (float) oldIntent.getSerializableExtra("calories");
+        Log.e("Developer", String.valueOf(calories));
+
+        TextView textView = findViewById(R.id.textView2);
+        textView.setText("You are to lose " + String.valueOf(calories) + " calories" );
 
         Button button = findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SportActivity.this, SumActivity.class);
-                intent.putExtra("calories", calories);
+
 
                 RadioGroup radioGroup = findViewById(R.id.radioGroup);
                 int checkecButton = radioGroup.getCheckedRadioButtonId();
                 RadioButton checked = findViewById(checkecButton);
+
+                float MET = 0;
                 String activity = (String) checked.getText();
+                if (activity.equals("Walk")){
+                    MET = (float) 3.3;
+                } else if (activity.equals ("Run")) {
+                    MET = (float) 7.0;
+                } else if (activity.equals("Cycle")){
+                    MET = (float) 5.5;
+                } else if (activity.equals("Swim")) {
+                    MET = (float) 8.0;
+                } else if (activity.equals("Row")) {
+                    MET = (float) 7.0;
+                } else if (activity.equals("Do Calisthenics")){
+                    MET = (float) 8.0;
+                } else{
+                    MET = (float) 1.0;
+                }
+
+                float duration = calories / MET;
+
+                intent.putExtra("duration", duration);
                 intent.putExtra("activity", activity);
                 startActivity(intent);
             }

@@ -24,6 +24,7 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_input);
         Intent gotIntent = getIntent();
         if (gotIntent.hasExtra("calories")){
@@ -31,6 +32,7 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
         } else {
             totalCalories = (float) 0.0;
         }
+
         Button button = findViewById(R.id.searchButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +41,7 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
                 input = textView.getText().toString();
                 Log.e("Developer", input);
                 FoodRequest x = new FoodRequest(InputActivity.this, input);
-                x.getFood((FoodRequest.Callback) InputActivity.this);
+                x.getFood( InputActivity.this);
 
                 RadioGroup mRadioGroup = findViewById(R.id.RadioGroup);
                 mRadioGroup.setVisibility(View.VISIBLE);
@@ -68,12 +70,8 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
         String test3 = food.get(2);
         String test4 = food.get(3);
         String test5 = food.get(4);
-        Log.e("Developer", test1);
-        Log.e("Developer", test2);
-        Log.e("Developer", test3);
-        Log.e("Developer", test4);
-        Log.e("Developer", test5);
 
+//        TODO: Make the radio group into a listview which shows all suggestions
         RadioButton option1 = findViewById(R.id.option1);
         option1.setText(test1);
         RadioButton option2 = findViewById(R.id.option2);
