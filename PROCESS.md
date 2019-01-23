@@ -30,5 +30,22 @@ Begonnen met de Google Maps API werkend te krijgen. Daarnaast ook een timer toeg
 De eerder gemaakte maps-functionaliteit bleek uiteindelijk niet naar behoren te werken. Hierdoor ben ik opnieuw begonnen deze functionaliteit te implementeren. Deze werkt nu en update iedere 5 seconden de locatie en plaatst hiervan een marker en slaat de coordinaten op. De afstand tussen de punten wordt berekend en kan getoond worden, indien de activiteit klaar is.
 
 # day 11 (JAN 17 2019)
-Er was al eerder gecheckt of de API werkt, maar ik kreeg deze nog niet goed geïmplementeerd in Android Studio. Dit werkt nu, al moet er nog wel verder geïmplementeerd worden om te kijken naar de precieze verweving in de app. De API returnt nu log prints
+Er was al eerder gecheckt of de API werkt, maar ik kreeg deze nog niet goed geïmplementeerd in Android Studio. Dit werkt nu, al moet er nog wel verder geïmplementeerd worden om te kijken naar de precieze verweving in de app. De API returnt nu log prints.
+
+# day 12 (JAN 18 2019)
+De GET-request voor het vinden van namen van voedingsmiddelen werkt nu.
+DE POST-request voor het terugkrijgen van voedingsinformatie geeft allerlei foutmeldingen. Hier de hele dag aan gezeten.
+
+# day 14 + day 15 (JAN 19 & JAN 20 2019)
+Geen voortgang
+
+# day 16 (JAN 21 2019)
+Hele dag bezig geweest de API goed geïmplementeerd te krijgen. Dit lukte helaas niet goed. Vervolgens liep de gehele BUILD.GRADLE ook vast, waardoor de hele app niets meer deed.
+
+# day 17 (JAN 22 2019)
+Vanwege de aangepast dienstregeling niet de stap genomen om naar Amsterdam te gaan. Zelf de hele dag bezig geweest met debuggen met uiteindelijk als resultaat dat de request werkend is. Vanwege de toch wel groeiende druk besloten de komende dagen ervoor te zorgen dat de verschillende activities zo veel mogelijk goed werkend zijn, voordat er andere activiteiten gedaan worden.
+Het plan om de zoekrsultaten in een ListView te zetten bijvoorbeeld staan voorlopig op de lange baan.
+
+# day 18 (JAN 23 2019) 
+Met de werkende API alle gehardcode gegevens uit de verschillende schermen verwijderd. Hierdoor werkt de app nu volledig op basis van user input. De Nutritionix API kan calorieën berekenen bij een bepaalde tijd een activiteit, maar kan niet eenvoudig de tijd berekenen voor een bepaalde activiteit. Dit is nu met de hand erin berekend, en zou mogelijk nog geïmplementeerd kunnen worden.
 
