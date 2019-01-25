@@ -24,6 +24,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
     Callback activity;
     ArrayList<JSONObject> foodJSON = new ArrayList<>();
     ArrayList<String> food = new ArrayList<>();
+    ArrayList<String> servingUnit = new ArrayList<>();
     String input;
 
     // Constructor
@@ -33,7 +34,7 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
     }
 
     public interface Callback {
-        void gotFood(ArrayList<String> food);
+        void gotFood(ArrayList<String> food, ArrayList<String> servingUnit);
         void gotFoodError(String message);
     }
 
@@ -78,12 +79,13 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
                 JSONObject temp = foodArray.getJSONObject(i);
                 foodJSON.add(temp);
                 String foodString = temp.getString("food_name");
-//                String foodString = temp.getString("serving_unit");
                 food.add(foodString);
+                String servingUnitString = temp.getString("serving_unit");
+                servingUnit.add(servingUnitString);
             }
         } catch (JSONException e) {
             Log.e("Developer", e.getMessage());
         }
-        activity.gotFood(food);
+        activity.gotFood(food, servingUnit);
     }
 }
