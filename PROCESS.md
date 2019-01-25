@@ -49,3 +49,10 @@ Het plan om de zoekrsultaten in een ListView te zetten bijvoorbeeld staan voorlo
 # day 18 (JAN 23 2019) 
 Met de werkende API alle gehardcode gegevens uit de verschillende schermen verwijderd. Hierdoor werkt de app nu volledig op basis van user input. De Nutritionix API kan calorieën berekenen bij een bepaalde tijd een activiteit, maar kan niet eenvoudig de tijd berekenen voor een bepaalde activiteit. Dit is nu met de hand erin berekend, en zou mogelijk nog geïmplementeerd kunnen worden.
 
+# day 19 (JAN 24 2019)
+Geen progress in verband met Hackathon.
+
+# day 20 (JAN 25 2019)
+De InputActivity aangepast met listview in plaats van RadioGroup zorgt ervoor dat er op een veel gemakkelijkere manier een keuze gemaakt kan worden qua opties. Verder een aanpassing om ook de serving size te laten zien. Ik heb ervoor gekozen de listView clickable te maken en de NextButton te verwijderen. 
+Verder de hele code nagelopen en meerdere TO-DO's toegevoegd.
+
