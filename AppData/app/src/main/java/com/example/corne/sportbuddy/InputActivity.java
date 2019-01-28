@@ -77,6 +77,10 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
 //        String test4 = food.get(3);
 //        String test5 = food.get(4);
 
+        if (food.size() < 1){
+            Toast.makeText(this, "No search results", Toast.LENGTH_LONG).show();
+        }
+
         FoodsAdapter foodsAdapter = new FoodsAdapter(this, R.layout.linear_item, food, servingUnit);
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(foodsAdapter);

@@ -111,7 +111,7 @@
                 android:id="@+id/button6"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
-                android:text="Combineer" />
+                android:text="Combine" />
 
             <Button
                 android:id="@+id/button7"

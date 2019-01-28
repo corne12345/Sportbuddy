@@ -80,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         button.setText("Pause");
                         timer = new CountDownTimer(time, 1000) {
                             public void onTick(long millisUntilFinished) {
-                                textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 +" Left");
+                                textField.setText(millisUntilFinished / 3600000 + ":" + (millisUntilFinished % 3600000) / 60000 + ":" + (millisUntilFinished % 60000) / 1000 +" Left");
                                 millileft = millisUntilFinished;
                             }
 
@@ -229,11 +229,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             Log.e("Developers", String.valueOf(distance));
 
                             mMap.addMarker(new MarkerOptions().position(temp).title(String.valueOf(distance)));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                    new LatLng(mLastKnownLocation.getLatitude(),
-                                            mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                            if(counter < 2){
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                        new LatLng(mLastKnownLocation.getLatitude(),
+                                                mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                            }
                         } else {
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
+                            // TODO: make a condition for moving the camera, so that it changes its camera in some circumstances
+
+                            if (counter < 0){
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
+                            }
                             mMap.getUiSettings().setMyLocationButtonEnabled(false);
                         }
                     }
