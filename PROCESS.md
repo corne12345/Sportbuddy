@@ -61,3 +61,4 @@ Geen progress in het weekend, behalve een korte bespreking met een vriendin van 
 
 # day 23 (JAN 28 2019)
 Enkele bugs verwijderd en de maps API nogmaals herzien, om deze beter te laten werken. De locatiebepaling is vrij onnauwkeurig binnen, waardoor de totaal afgelegde afstand te snel toeneemt. Ik ben bezig hier een oplossing voor te zoeken.
+Toevoeging van een begin- en eindscherm aan de app is het meest in het oog springend. Het leek me beter om toch een goed begin en einde aan mijn app te verbinden; dit was namelijk nog geen onderdeel van mijn app en liet het geheel daardoor een beetje onsamenhagend overkomen.
