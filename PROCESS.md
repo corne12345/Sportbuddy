@@ -56,3 +56,8 @@ Geen progress in verband met Hackathon.
 De InputActivity aangepast met listview in plaats van RadioGroup zorgt ervoor dat er op een veel gemakkelijkere manier een keuze gemaakt kan worden qua opties. Verder een aanpassing om ook de serving size te laten zien. Ik heb ervoor gekozen de listView clickable te maken en de NextButton te verwijderen. 
 Verder de hele code nagelopen en meerdere TO-DO's toegevoegd.
 
+# day 21 & day 22 (JAN 26 & JAN 27 2019)
+Geen progress in het weekend
+
+# day 23 (JAN 28 2019)
+Enkele bugs verwijderd en de maps API nogmaals herzien, om deze beter te laten werken. De locatiebepaling is vrij onnauwkeurig binnen, waardoor de totaal afgelegde afstand te snel toeneemt. Ik ben bezig hier een oplossing voor te zoeken.
