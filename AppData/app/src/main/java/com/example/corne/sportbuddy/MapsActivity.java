@@ -73,6 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Create timer which can start, pause and resume and warns user when done
         final Button button = findViewById(R.id.button5);
+        final float finalDuration = duration;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,12 +86,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
 
                             public void onFinish() {
-                                button.setVisibility(View.INVISIBLE);
+                                button.setText("Overview");
                                 textField.setText("done!");
                                 Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                 v.vibrate(2000);
-                                //Toast.makeText(MapsActivity.this, String.valueOf(distance), Toast.LENGTH_LONG).show();
-                            }
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(MapsActivity.this, OverviewActivity.class);
+                                        intent.putExtra("Duration", finalDuration);
+                                        intent.putExtra("Distance", distance);
+                                        startActivity(intent);
+                                    }
+                                });                            }
                         }.start();
 
                     } else if (button.getText().equals("Pause")){
@@ -102,17 +110,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         timer = new CountDownTimer(millileft, 1000) {
                             @Override
                             public void onTick(long millisUntilFinished) {
-                                textField.setText(millisUntilFinished / 60000 + ":" + (millisUntilFinished % 60000) / 1000 + " Left");
+                                textField.setText(millisUntilFinished / 3600000 + ":" + (millisUntilFinished % 3600000) / 60000 + ":" + (millisUntilFinished % 60000) / 1000 +" Left");
                                 millileft = millisUntilFinished;
                             }
 
                             @Override
                             public void onFinish() {
-                                button.setVisibility(View.INVISIBLE);
+                                button.setText("Overview");
                                 textField.setText("done!");
                                 Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                 v.vibrate(2000);
-                                //Toast.makeText(MapsActivity.this, String.valueOf(distance), Toast.LENGTH_LONG).show();
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(MapsActivity.this, OverviewActivity.class);
+                                        intent.putExtra("Duration", finalDuration);
+                                        intent.putExtra("Distance", distance);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         }.start();
                 }

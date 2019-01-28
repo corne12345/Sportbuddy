@@ -53,7 +53,7 @@ public class SportActivity extends AppCompatActivity {
                     MET = (float) 1.0;
                 }
 
-                float duration = calories / MET;
+                float duration = (float) (calories / (MET * 1.5));
 
                 intent.putExtra("duration", duration);
                 intent.putExtra("activity", activity);
