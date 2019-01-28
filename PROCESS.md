@@ -57,7 +57,7 @@ De InputActivity aangepast met listview in plaats van RadioGroup zorgt ervoor da
 Verder de hele code nagelopen en meerdere TO-DO's toegevoegd.
 
 # day 21 & day 22 (JAN 26 & JAN 27 2019)
-Geen progress in het weekend
+Geen progress in het weekend, behalve een korte bespreking met een vriendin van mij om inspiratie op te doen over de layout en UI.
 
 # day 23 (JAN 28 2019)
 Enkele bugs verwijderd en de maps API nogmaals herzien, om deze beter te laten werken. De locatiebepaling is vrij onnauwkeurig binnen, waardoor de totaal afgelegde afstand te snel toeneemt. Ik ben bezig hier een oplossing voor te zoeken.
