@@ -11,56 +11,38 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-import java.util.Map;
-
 public class ViewActivity extends AppCompatActivity implements NutrientsRequest.Callback{
 
-    String calories;
-    String fat;
-    String carbohydrates;
-    String protein;
-    String sodium;
-    String servingSize;
-    String servingWeight;
+    String calories, fat, carbohydrates, protein, sodium, servingSize, servingWeight;
     float totalCalories;
 
-//    Set servings as standard to 1 in case user doesn't give an input
+    // Set servings as standard to 1 in case user doesn't give an input
     int servings = 1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
+        final EditText amountServings = findViewById(R.id.editText3);
+
+        // Get information from intent and load this for current activity and set food name as text
         Intent gotIntent = getIntent();
         totalCalories = (float) gotIntent.getSerializableExtra("calories");
-        Log.e("Developer", String.valueOf(totalCalories));
         String food = gotIntent.getSerializableExtra("choice").toString();
         TextView textView = findViewById(R.id.textView18);
         textView.setText(food);
 
+        // Make a request for nutritional information
         NutrientsRequest x = new NutrientsRequest(this, food);
         x.getNutrients( ViewActivity.this);
-        Log.e("Developer", "getNutrients done");
 
-        final EditText amountServings = findViewById(R.id.editText3);
+        // Set onClickListener for Back Button to go back to InputActivity
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,33 +51,41 @@ public class ViewActivity extends AppCompatActivity implements NutrientsRequest.
                 startActivity(intent1);
             }
         });
+
+        // Set onClickListener for Add Button to go back to InputActivity saving total calories
         Button button2 = findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String servingsString = (String) amountServings.getText().toString();
+
+                // Check if servings is filled in and couple its value to servings
+                String servingsString = amountServings.getText().toString();
                 if (servingsString.length() > 0){
                     servings = Integer.valueOf(servingsString);
                 }
-                totalCalories += Float.valueOf(calories) * servings;
-                Log.e("Developer", String.valueOf(totalCalories));
 
+                // Add food to totalcalories and put this as extra
+                totalCalories += Float.valueOf(calories) * servings;
                 Intent intent2 = new Intent(ViewActivity.this, InputActivity.class);
                 intent2.putExtra("calories", totalCalories);
                 startActivity(intent2);
             }
         });
+
+        // Set onClickListener for Next Button to go to SportActivity
         Button button3 = findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Check if sservings is filled in and couple its value to serving
                 String servingsString = (String) amountServings.getText().toString();
                 if (servingsString.length() > 0){
                     servings = Integer.valueOf(servingsString);
                 }
-                totalCalories += Float.valueOf(calories) * servings;
-                Log.e("Developer", String.valueOf(totalCalories));
 
+                // Add food to totalcalories and put this as extra
+                totalCalories += Float.valueOf(calories) * servings;
                 Intent intent3 = new Intent (ViewActivity.this, SportActivity.class);
                 intent3.putExtra("calories", totalCalories);
                 startActivity(intent3);
@@ -142,6 +132,6 @@ public class ViewActivity extends AppCompatActivity implements NutrientsRequest.
 
     @Override
     public void gotNutrientsError(String message) {
-        Log.e("Developer", "Failed Request");
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

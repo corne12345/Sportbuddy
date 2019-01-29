@@ -24,67 +24,57 @@ import java.util.ArrayList;
 public class InputActivity extends AppCompatActivity implements FoodRequest.Callback {
     String input;
     float totalCalories;
-    String choiceString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_input);
         Intent gotIntent = getIntent();
+
+        // Load calories if this activity is loaded for a second time
         if (gotIntent.hasExtra("calories")){
             totalCalories = (float) gotIntent.getSerializableExtra("calories");
+
+        // Set totalCalories to 0 if Activity is opened for the first time
         } else {
             totalCalories = (float) 0.0;
         }
 
+        // OnClickListener for searchButton
         Button button = findViewById(R.id.searchButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Take editText as input and start request with this input
                 EditText textView = findViewById(R.id.editText);
                 input = textView.getText().toString();
-                Log.e("Developer", input);
-                FoodRequest x = new FoodRequest(InputActivity.this, input);
-                x.getFood( InputActivity.this);
 
-                //TODO: Delete elements for RadioGroup and Next Button
-//                RadioGroup mRadioGroup = findViewById(R.id.RadioGroup);
-//                mRadioGroup.setVisibility(View.VISIBLE);
+                // Give error message if no input is provided
+                if(input.length() == 0){
+                    Toast.makeText(InputActivity.this, "No search query provided", Toast.LENGTH_SHORT).show();
+                }
+                FoodRequest search = new FoodRequest(InputActivity.this, input);
+                search.getFood( InputActivity.this);
             }
         });
-//        Button button2 = findViewById(R.id.button8);
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                RadioGroup mRadioGroup = findViewById(R.id.RadioGroup);
-//                int choice = mRadioGroup.getCheckedRadioButtonId();
-//                RadioButton choiceButton = findViewById(choice);
-//                String choiceString = (String) choiceButton.getText();
-//                Intent intent = new Intent(InputActivity.this, ViewActivity.class);;
-//                intent.putExtra("choice", choiceString);
-//                intent.putExtra("calories", totalCalories);
-//                startActivity(intent);
-//            }
-//        });
     }
 
+    // Result method for successful Foodrequest
     @Override
     public void gotFood(final ArrayList<String> food, final ArrayList<String> servingUnit){
-//        String test1 = food.get(0);
-//        String test2 = food.get(1);
-//        String test3 = food.get(2);
-//        String test4 = food.get(3);
-//        String test5 = food.get(4);
 
+        // Show toast if no result were found and display empty list
         if (food.size() < 1){
             Toast.makeText(this, "No search results", Toast.LENGTH_LONG).show();
         }
 
+        // Create foodsAdapter consisting of the foods and serving sizes and set them in listview
         FoodsAdapter foodsAdapter = new FoodsAdapter(this, R.layout.linear_item, food, servingUnit);
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(foodsAdapter);
 
+        // Create onItemClickListener, which makes an intent with the choice as an extra
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -96,25 +86,11 @@ public class InputActivity extends AppCompatActivity implements FoodRequest.Call
                 startActivity(intent);
             }
         });
-
-//        TODO: Delete radio button elements if necessary
-//        RadioButton option1 = findViewById(R.id.option1);
-//        option1.setText(test1);
-//        RadioButton option2 = findViewById(R.id.option2);
-//        option2.setText(test2);
-//        RadioButton option3 = findViewById(R.id.option3);
-//        option3.setText(test3);
-//        RadioButton option4 = findViewById(R.id.option4);
-//        option4.setText(test4);
-//        RadioButton option5 = findViewById(R.id.option5);
-//        option5.setText(test5);
     }
 
+    // Result method for failed Foodrequest shows a toast warning for the failure
     @Override
     public void gotFoodError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        Log.e("Developer", "Failed request");
     }
-
-
 }

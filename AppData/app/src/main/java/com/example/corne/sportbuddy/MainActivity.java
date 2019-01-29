@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Connect the next button to the next activity (InputActivity)
         Button nextButton = findViewById(R.id.button8);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

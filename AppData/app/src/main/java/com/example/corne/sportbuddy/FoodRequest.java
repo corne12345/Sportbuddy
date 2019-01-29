@@ -33,19 +33,21 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
         this.input = input;
     }
 
+    // Callback method
     public interface Callback {
         void gotFood(ArrayList<String> food, ArrayList<String> servingUnit);
         void gotFoodError(String message);
     }
 
-    // Method that makes a queque and tries to add this request to it
+    // Method that makes a queue and tries to add this request to it
     void getFood(Callback activity){
         this.activity = activity;
         String url = "https://trackapi.nutritionix.com/v2/search/instant?query="+ input;
-
         RequestQueue queue = Volley.newRequestQueue(context);
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this){
+
+                // Make a HashMap containing the required headerss
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String, String> params = new HashMap<String, String>();
@@ -53,7 +55,6 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
                     params.put("x-app-key", "2332c372fcee1f71ae2e959125eacc97");
                     params.put("x-remote-user-id", "0");
                     params.put("cache-control", "no-cache");
-                    params.put("Postman-Token", "96cb6307-0f37-4f7e-a4d1-98ac42d6f23c");
                     return params;
                 }
             };
@@ -65,14 +66,17 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
     }
 
 
+    // Connect the error to the correct method in the InputActivity
     @Override
     public void onErrorResponse(VolleyError error) {
-        // Start method in InputActivity when the request fails
         activity.gotFoodError(error.getMessage());
     }
 
+    // Action on Response
     @Override
     public void onResponse(JSONObject response) {
+
+        // build 2 Arraylists for the foods and their serving sizes
         try {
             JSONArray foodArray = response.getJSONArray("common");
             for(int i = 0; i < foodArray.length(); i ++){
@@ -86,6 +90,8 @@ public class FoodRequest implements Response.Listener<JSONObject>, Response.Erro
         } catch (JSONException e) {
             Log.e("Developer", e.getMessage());
         }
+
+        // load the corresponing method in InputActivity with the ArrayLists as parameters
         activity.gotFood(food, servingUnit);
     }
 }

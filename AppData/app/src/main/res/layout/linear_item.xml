@@ -7,9 +7,11 @@
         android:id="@+id/textView23"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/Color2"
         android:padding="6dp"
         android:text="Food Item"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -17,7 +19,9 @@
         android:id="@+id/textView24"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/Color2"
         android:padding="6dp"
         android:text="Serving Size"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textStyle="italic" />
 </LinearLayout>

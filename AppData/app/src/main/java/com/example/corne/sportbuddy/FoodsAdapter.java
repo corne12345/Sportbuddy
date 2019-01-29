@@ -15,19 +15,21 @@ public class FoodsAdapter extends ArrayAdapter<String> {
     private ArrayList<String> servingUnit;
 
 
+    // Constructor
     public FoodsAdapter(Context context, int resource, ArrayList<String> objects, ArrayList<String> objects2) {
         super(context, resource, objects);
         this.food = objects;
         this.servingUnit = objects2;
     }
 
+    // getView method to inflate adapter into ListView
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.linear_item, parent, false);
         }
 
-        // Select TextViews for inserting options
+        // Select TextViews and insert foods and serving sizes on the right places
         TextView itemName = convertView.findViewById(R.id.textView23);
         String name = food.get(position);
         itemName.setText(name);
@@ -36,7 +38,6 @@ public class FoodsAdapter extends ArrayAdapter<String> {
         String servingUnitString = servingUnit.get(position);
         servingUnitView.setText(servingUnitString);
 
-        //TODO: Create condition to prevent crashing when no result is found
         return convertView;
     }
 }
