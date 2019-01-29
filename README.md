@@ -30,13 +30,3 @@ Indien er een database of historie van cheatfoods emaakt wordt is het nodig deze
 
 De grootste uitdaging van de app zit in het omzetten van de zoekactie van de gebruiker in een calorietotaal, met name wanneer de invoeropdrachten gecompliceerder worden of er een autocomplete/autocorrect noodzakelijk is. 
 
-.
-.
-.
-.
-.
-.
-.
-.
-.
-# Oude Versie
