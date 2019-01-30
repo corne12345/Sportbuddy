@@ -1,6 +1,15 @@
 # Sportbuddy
 January 2019 Project: App Studio (UvA)
 
+## Problem Statement and solution
+A lot of people try to stay in shape, but struggle sometimes. This results in unwanted cheatdays and a feelin of guilt the day after. Sportbuddy is there to help those people quantify last night's sin and help them calculate their required activity duration to compensate for over-the-top consumption.
+
+## Design
+The app lets the user log their food and calculates the total caloric intake. This intake is shown to the user for confrontation purposes. Then, the user can chose his or her activity and the app calculates the user the amount of time this activity has to be excecuted to even out. 
+A Google Maps screen is displayed in combination with a timer, which will guide the user through its exercise routine. This is all concluded by a overview screen, on which the user can see the travelled distance and time of the activity.
+Underneath the "Screenshots" header are a couple of pictures from the app.
+
+## Screenshots
 <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143815_SportBuddy.jpg" alt="drawing" width="200"/>  <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143824_SportBuddy.jpg" alt="drawing" width="200"/>  <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143832_SportBuddy.jpg" alt="drawing" width="200"/>
 
 *Screenshots of the first two activities*
