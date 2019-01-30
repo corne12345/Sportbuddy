@@ -9,6 +9,24 @@ The app lets the user log their food and calculates the total caloric intake. Th
 A Google Maps screen is displayed in combination with a timer, which will guide the user through its exercise routine. This is all concluded by a overview screen, on which the user can see the travelled distance and time of the activity.
 Underneath the "Screenshots" header are a couple of pictures from the app.
 
+## Acknowledgements
+This app is produced with various online help and resources:
+* the Nutritionix-API at https://www.nutritionix.com/business/api
+* the Maps-API at https://cloud.google.com/maps-platform/?hl=nl
+* MET-values at https://en.wikipedia.org/wiki/Metabolic_equivalent
+* The design for the app was made using https://marvelapp.com/
+
+Troubleshooting was provided by:
+* The staff of the Minor Programmeren
+* StackOverflow and other online forums
+* Kristi van den Akker for the initial idea and help designing the UI
+
+## Copyright
+All the content used by external API's is property of their respective owners. I only used these for non-commercial uses.
+The app itself and its vectors have shared ownership of myself and my designer. 
+The full license can be found at https://github.com/corne12345/Sportbuddy/blob/master/LICENSE.
+
+
 ## Screenshots
 <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143815_SportBuddy.jpg" alt="drawing" width="200"/>  <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143824_SportBuddy.jpg" alt="drawing" width="200"/>  <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/final/Screenshot_20190130-143832_SportBuddy.jpg" alt="drawing" width="200"/>
 
