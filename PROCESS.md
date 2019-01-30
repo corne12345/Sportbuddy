@@ -63,3 +63,10 @@ Geen progress in het weekend, behalve een korte bespreking met een vriendin van 
 Enkele bugs verwijderd en de maps API nogmaals herzien, om deze beter te laten werken. De locatiebepaling is vrij onnauwkeurig binnen, waardoor de totaal afgelegde afstand te snel toeneemt. Ik ben bezig hier een oplossing voor te zoeken.
 Toevoeging van een begin- en eindscherm aan de app is het meest in het oog springend. Het leek me beter om toch een goed begin en einde aan mijn app te verbinden; dit was namelijk nog geen onderdeel van mijn app en liet het geheel daardoor een beetje onsamenhagend overkomen.
 Na vandaag zullen er geen grote wijzigingen meer aan de app plaats vinden. De komende twee dagen gaan in het thema staan van enerzijds het nakijken en becommentariëren van de code, en anderzijds het werken aan de layout en UI.
+
+# day 24 (JAN 29 2019)
+De hele dag bezig geweest met het nakijken van de code en het coherent maken van de User Interface. Hierbij duidelijk de keuze gemaakt alle tekst zwart of wit te doen, waarbij de meest belangrijke elementen wit zijn en wat meer achtergrond zwart. Hierdoor springen de meest belangrijke tekstelementen veel meer uit in de tekst.
+
+# day 25 (JAN 30 2019)
+Ook deze dag besteed aan het controleren van de code en het aanpassen van de UI. Opvallend hierbij was dat ik de optie tot rotatie heb uitgezet in de MapsActivity, aangezien dat een zeer onlogisch design zou opleveren. Verder ook wat kleine bestaande extraatjes verwijderd die ik misscien nog wilde toevoegen etc.
+De README.md gemaakt en de versie geupload.
