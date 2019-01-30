@@ -9,38 +9,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/Color2"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="44dp">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:fontFamily="serif"
+            android:layout_margin="24dp"
+            android:fontFamily="sans-serif"
             android:text="Choose Activity"
             android:textAlignment="center"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="@android:color/background_dark"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
+            android:textSize="36sp"
+            android:textStyle="bold"
             android:typeface="sans" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Je moet in totaal 1450 calorièn kwijt zien te raken" />
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="You need to lose a  total of 1450 calories"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose an activity to calculate duration" />
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="Choose an activity to calculate duration:"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:checkedButton="@+id/radioButton"
             android:orientation="vertical">
 
@@ -48,78 +63,153 @@
                 android:id="@+id/radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Walk" />
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Walk"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Run" />
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Run"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Cycle" />
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Cycle"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Swim" />
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Swim"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Row" />
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Row"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:text="Do Calisthenics" />
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Do Calisthenics"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
-            android:id="@+id/radioButton7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:text="Wait" />
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:buttonTint="@color/Color1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="8dp"
+                android:text="Wait"
+                android:textColor="@color/secondaryTextColor"
+                android:textColorLink="@color/Color1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </RadioGroup>
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="195dp"
-                android:layout_height="wrap_content"
-                android:text="Combine" />
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:layout_weight="2"
-                android:text="next" />
-        </LinearLayout>
+                android:background="@color/Color1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="2"
+                android:background="@color/Color1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

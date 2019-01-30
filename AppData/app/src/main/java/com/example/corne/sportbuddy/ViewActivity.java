@@ -87,15 +87,17 @@ public class ViewActivity extends AppCompatActivity implements NutrientsRequest.
                 // Add food to totalcalories and put this as extra
                 totalCalories += Float.valueOf(calories) * servings;
                 Intent intent3 = new Intent (ViewActivity.this, SportActivity.class);
-                intent3.putExtra("calories", totalCalories);
+                intent3.putExtra("calories", Math.round(totalCalories));
                 startActivity(intent3);
             }
         });
     }
 
+    // Method to start after a successful request for nutrients of a chosen food
     @Override
     public void gotNutrients(final JSONObject responseObject){
-        Log.e("Developer", "Succesfull request");
+
+        // Define all the textfields to be filled in by nutrient information
         final TextView caloriesView = findViewById(R.id.textView9);
         final TextView fatView = findViewById(R.id.textView11);
         final TextView carbohydratesView = findViewById(R.id.textView13);
@@ -104,6 +106,7 @@ public class ViewActivity extends AppCompatActivity implements NutrientsRequest.
         final TextView servingSizeView = findViewById(R.id.textView20);
         final TextView servingWeightView = findViewById(R.id.textView22);
 
+        // Assign the requested values to its defined textfields
         try{
             calories = responseObject.getString("nf_calories");
             caloriesView.setText(calories + " KCal");
@@ -120,16 +123,19 @@ public class ViewActivity extends AppCompatActivity implements NutrientsRequest.
             servingWeight = responseObject.getString("serving_weight_grams");
             servingWeightView.setText(servingWeight + " g");
 
+
+            // Use picasso to convert the image link to the picture and display this picture
             JSONObject photoArray = responseObject.getJSONObject("photo");
             String urlPhoto = photoArray.getString("highres");
             Log.e("Developer", urlPhoto);
             ImageView photo = findViewById(R.id.imageView2);
-            Picasso.get().load(urlPhoto).into(photo);
+            Picasso.get().load(urlPhoto).resize(600, 600).centerInside().into(photo);
         } catch (JSONException e){
             e.printStackTrace();
         }
     }
 
+    // Method that load after a failed nutrientRequest that displays the error message
     @Override
     public void gotNutrientsError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

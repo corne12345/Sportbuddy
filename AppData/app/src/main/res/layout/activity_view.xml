@@ -14,22 +14,22 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@color/Color2" />
+            android:layout_width="412dp"
+            android:layout_height="370dp"
+            android:background="@color/common_google_signin_btn_text_dark_pressed" />
 
         <TextView
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:fontFamily="serif"
+            android:fontFamily="sans-serif"
             android:text="Double Cheese Burger"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="24sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -38,20 +38,26 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp">
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Serving Unit"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -63,13 +69,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Serving Weight"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -81,13 +92,18 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Total Calories"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000" />
+                    android:text="1000"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -99,13 +115,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="amount of fat "
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="28g" />
+                    android:text="28g"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -117,13 +138,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="amount of carbohydrates"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="18g" />
+                    android:text="18g"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -135,13 +161,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="amount of protein"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9g" />
+                    android:text="9g"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
             </TableRow>
 
@@ -154,13 +185,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="amount of salt "
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="800 mg " />
+                    android:text="800 mg "
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/primaryTextColor"
+                    android:textStyle="bold" />
 
             </TableRow>
 
@@ -173,7 +209,8 @@
             android:layout_margin="8dp"
             android:ems="10"
             android:hint="# Servings"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/primaryTextColor" />
 
         <LinearLayout
             android:layout_width="match_parent"

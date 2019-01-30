@@ -17,25 +17,37 @@ public class SportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport);
 
+        // Retrieve the amount of calaries from previous activities and put it in textview
         Intent oldIntent = getIntent();
-        final float calories = (float) oldIntent.getSerializableExtra("calories");
-        Log.e("Developer", String.valueOf(calories));
-
+        final int calories = (int) oldIntent.getSerializableExtra("calories");
         TextView textView = findViewById(R.id.textView2);
         textView.setText("You are to lose " + String.valueOf(calories) + " calories" );
 
+        // Set onClickListener for the backButton to create new intent
+        Button backButton = findViewById(R.id.button6);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBack = new Intent(SportActivity.this, InputActivity.class);
+                intentBack.putExtra("calories", (float) calories);
+                startActivity(intentBack);
+            }
+        });
+
+        // Set onClickListener for the nextButton to create new intent
         Button button = findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SportActivity.this, SumActivity.class);
 
-
+                // Retrieve checked radioButton
                 RadioGroup radioGroup = findViewById(R.id.radioGroup);
                 int checkecButton = radioGroup.getCheckedRadioButtonId();
                 RadioButton checked = findViewById(checkecButton);
 
-                float MET = 0;
+                // Use the checked button to calculate the duration with and put this in intent
+                float MET = 0; //MET = Metabolic Equivalent of Task
                 String activity = (String) checked.getText();
                 if (activity.equals("Walk")){
                     MET = (float) 3.3;
@@ -53,23 +65,14 @@ public class SportActivity extends AppCompatActivity {
                     MET = (float) 1.0;
                 }
 
+                // Formula approximately calculate the duration on an activity based on calories
                 float duration = (float) (calories / (MET * 1.5));
 
                 intent.putExtra("duration", duration);
                 intent.putExtra("activity", activity);
+                intent.putExtra("calories", calories);
                 startActivity(intent);
             }
         });
-
-        Button button2 = findViewById(R.id.button6);
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent2 = new Intent(SportActivity.this, DetailActivity.class);
-//                intent2.putExtra("calories", calories);
-//                startActivity(intent2);
-//            }
-//        });
-
     }
 }

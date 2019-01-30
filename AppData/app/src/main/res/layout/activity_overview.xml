@@ -4,22 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Color2"
     tools:context=".OverviewActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="411dp"
+        android:layout_height="241dp"
+        android:background="@color/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/knipsel3" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Congratulations!"
         android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
         android:id="@+id/textView28"
@@ -30,20 +43,20 @@
         android:layout_marginEnd="16dp"
         android:text="You finised your activity"
         android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"
         android:textSize="30sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TableLayout
+        android:id="@+id/tableLayout2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28">
@@ -58,7 +71,9 @@
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:text="Time"
-                android:textSize="24sp" />
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView30"
@@ -66,12 +81,14 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="TextView"
-                android:textSize="24sp" />
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView31"
@@ -79,15 +96,19 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="Distance"
-                android:textSize="24sp" />
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView32"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:text="TextView"
+                android:textColor="@color/secondaryTextColor"
                 android:textSize="24sp"
-                android:padding="8dp" />
+                android:textStyle="bold" />
         </TableRow>
 
     </TableLayout>
