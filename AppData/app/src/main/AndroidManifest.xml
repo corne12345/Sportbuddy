@@ -17,18 +17,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OverviewActivity"></activity>
-        <activity android:name=".InputActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".OverviewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".InputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewActivity" />
-        <activity android:name=".SportActivity" />
-        <activity android:name=".SumActivity" />
+        <activity
+            android:name=".ViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SumActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
