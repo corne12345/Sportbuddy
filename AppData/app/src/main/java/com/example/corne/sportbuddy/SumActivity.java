@@ -23,9 +23,9 @@ public class SumActivity extends AppCompatActivity {
 
         // Set text with the information obtained from the intent
         TextView textView = findViewById(R.id.textView5);
-        textView.setText("You have to " + activity + " for " + String.valueOf(duration) + " minutes to compensate. I will help you to achieve this");
+        textView.setText("You have to " + activity + " for " + String.valueOf(duration) + " minutes to compensate. I will help you to achieve this.");
 
-        // OnClickListeners for both the edit and the start button
+        // OnClickListeners for both the edit and the start button, which leads to new activities
         Button button2 = findViewById(R.id.button4);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override

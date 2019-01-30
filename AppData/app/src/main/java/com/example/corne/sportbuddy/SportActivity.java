@@ -21,8 +21,8 @@ public class SportActivity extends AppCompatActivity {
         Intent oldIntent = getIntent();
         final int calories = (int) oldIntent.getSerializableExtra("calories");
         TextView textView = findViewById(R.id.textView2);
-        textView.setText("You are to lose " + String.valueOf(calories) + " calories" );
-
+        textView.setText("You need te compensate " + String.valueOf(calories) + " calories." );
+0
         // Set onClickListener for the backButton to create new intent
         Button backButton = findViewById(R.id.button6);
         backButton.setOnClickListener(new View.OnClickListener() {
