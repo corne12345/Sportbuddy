@@ -1,5 +1,5 @@
 # Sportbuddy
-January 2019 Project: App Studio (UvA)
+*January 2019 Project: App Studio (UvA)*
 
 ## Problem Statement and solution
 A lot of people try to stay in shape, but struggle sometimes. This results in unwanted cheatdays and a feelin of guilt the day after. Sportbuddy is there to help those people quantify last night's sin and help them calculate their required activity duration to compensate for over-the-top consumption.
