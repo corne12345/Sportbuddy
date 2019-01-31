@@ -25,3 +25,5 @@ The user then has the choice to add more foods, change the last input or continu
 * **ViewActivity** is kind of a summary showing the amount of time the user has to perform a certain activity to get even. This is the last chance for the user to change its activity or intake. 
 * **MapsActvity** is mostly filled with an interactive GoogleMaps object. The upper part is a timer, which counts down starting from the duration of activity to 0. The timer can be paused and resumed. When the countdown has reached 0, the phone vibrates and the user has a chance to go to the next activity. The Maps object updates the user's current location and adds a mark to the map pinning the current location. This will lead to a trac of markers. At the first search the map moves to the current location.
 * **OverviewActivity** is the final screen that just shows the passed time and travelled distance in that time. It is kind of a summary of the whole cycle of the app.
+
+<img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/Final%20layout.PNG" alt="drawing" height="200"/>
