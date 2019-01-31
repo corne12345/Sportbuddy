@@ -27,3 +27,4 @@ The user then has the choice to add more foods, change the last input or continu
 * **OverviewActivity** is the final screen that just shows the passed time and travelled distance in that time. It is kind of a summary of the whole cycle of the app.
 
 <img src="https://github.com/corne12345/Sportbuddy/blob/master/doc/Final%20layout.PNG" alt="drawing" height="200"/>
+*Overview of the different activities in SportBuddy (MainActivity was unable to be displayed correctly).
