@@ -48,3 +48,8 @@ The third week was mostly used for connecting every aspect in the app and gettin
 On January 27th, I met up with a friend of mine to get some tips on the design. Together we had some crazy ideas about how to make the app great looking. She is quite experienced in using the Adobe Create Suites Series, but recreating these things in Android Studio is pretty hard, since the layout files are not that user-friendly. I ended up making a color scheme and resizing images to get everything fixed. 
 
 The last few days were spent on implementing these layout-changes and inspecting the entire code. I added some extra comments, reviewed the code in terms of style and efficiency and changed some buttons.
+
+## Review
+Looking back on it all, I was really happy to drastically changed the plans for my application; it was way too ambitious at first. Creating a totally new idea felt like a setback, but helped me better thinking it through. 
+Still then, the app took a lot of work to complete. Therefore I was not able to implement landscape views of my activities. This is something I regret and would have done better in an ideal situation. Furthermore, it would have been nice to create a database to store all the logged foods in, to be able to have a look at what has already been logged. This would have taken quite some extra time, so it was a good decision to not implement it, but it will be a great feature for an updated version.
+All in all, I think I have set my priorities right and am happy with the final result.
